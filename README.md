@@ -110,16 +110,15 @@ TODO
 * Other functionality not available in original ROMWak?
 
 2022-11-23: MF
-Built 0.4 windows exe.
 
-Added example split batch files for;
-Atari ST: 2 (96k) and 6 (32k) chip TOS
-Atari TT: 4 (128k) chip TOS
-Atari STE: 2 (128k) chip TOS
-Atari ST micro ATX: 2 (256k) chip TOS (Contains two switchable TOS images, 256k each, zero padded)
-Atari PAK68/3: 4 (128k) chip TOS
-Atari PAK68/2: 4 (128k) chip TOS
-
-Added example combine batch files for;
-Atari TT: 4 (128k) chip TOS
-Atari STE: 2 (128k) chip TOS
+* Built 0.4 windows exe.
+* Added example split batch files for;
+* Atari ST: 2 (96k) and 6 (32k) chip TOS
+* Atari TT: 4 (128k) chip TOS
+* Atari STE: 2 (128k) chip TOS
+* Atari ST micro ATX: 2 (256k) chip TOS (Contains two switchable TOS images, 256k each, zero padded)
+* Atari PAK68/3: 4 (128k) chip TOS
+* Atari PAK68/2: 4 (128k) chip TOS
+* Added example combine batch files for;
+* Atari TT: 4 (128k) chip TOS
+* Atari STE: 2 (128k) chip TOS
