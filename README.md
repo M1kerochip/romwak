@@ -1,8 +1,10 @@
 ROMWak
 ======
+
 Original program by Jeff Kurtz, ported to ANSI C by freem, with additions from ozzyyzzo
 
 Tested and confirmed working on these platforms and compilers:
+
 * Windows x32 (Microsoft 32-bit C/C++ Optimizing Compiler Version 15.00.30729.01 for 80x86)
 * Windows x64 (tcc 0.9.26)
 * Windows x64 (gcc (rev5, Built by MinGW-W64 project) 4.8.1 on Windows 7 x64)
@@ -12,9 +14,11 @@ Tested and confirmed working on these platforms and compilers:
 
 Usage
 -----
+
 ROMWak is a program whose parameters change depending on what option you pass in.
 
-The base command is romwak <option>, where the options are:
+The base command is romwak [option], where the options are:
+
 * `/b` - Split file into two files, alternating bytes into separate files.
 * `/c` - Concatenate two files
 * `/f` - Flip low/high bytes of a file.
@@ -30,28 +34,34 @@ The base command is romwak <option>, where the options are:
 The program also supports shorthand -params (e.g. '-b', '-p', and so on).
 
 ### Split File in Two, Alternating Bytes (/b) ###
+
 `romwak /b <infile> <outfile1> <outfile2>`  
 Splits the specified input file into two files by words (two bytes).
 
 ### Concatenate two files (/c) ###
+
 `romwak /c <infile1> <infile2> <outfile>`
 Concatenates the contents of `<infile1>` and `<infile2>` into `<outfile>`.
 
 ### Flip High/Low Bytes (/f) ###
+
 `romwak /f <infile> [<outfile>]`  
 Flips the high and low bytes of the specified file.
 
 `<outfile>` is optional; if omitted, the file will be swapped in place.
 
 ### Split File in Half (/h) ###
+
 `romwak /h <infile> <outfile1> <outfile2>`  
 Splits the input file in half into two files (outfile1 and outfile2).
 
 ### Export ROM Information (/i) ###
+
 `romwak /i <infile> <outfile>
 Rom information as a text file (size,crc32)
 
 ### Byte Merge Two Files (/m) ###
+
 `romwak /m <infile1> <infile2> <outfile>`  
 Merges the bytes of infile1 and infile2 to create outfile.
 
@@ -59,10 +69,12 @@ The byte of infile1 is written, then the byte of infile2 is written;
 repeat for the entire length of the file.
 
 ### Byte Merge Four Files (/q) ###
+
 `romwak /m <infile1> <infile2> <infile3> <infile4> <outfile>`  
 Merges the bytes of infile1, infile2, infile3, and infile4 to create outfile.
 
 ### Swap Top and Bottom Halves of File (/s) ###
+
 `romwak /s <infile> [<outfile>]`  
 Swaps the top and bottom halves of the file.
 
@@ -71,16 +83,19 @@ This works pretty awkwardly with odd length files (one byte will be missing).
 `<outfile>` is optional; if omitted, the file will be swapped in place.
 
 ### Byte Update Two Files (/u) ###
+
 `romwak /u <infile1> <infile2> <outfile> <update size>`  
 Updates some bytes of infile2 with infile1 to create outfile.
 
 ### Split File Two, Alternating Words (/w) ###
+
 `romwak /w <infile> <outfile1> <outfile2>`  
 Splits the input file into two files by words (two bytes).
 
 ### Pad file (/p) ###
+
 `romwak /p <infile> <outfile> <padsize> <padbyte>`  
-Pads the input file to <padsize> Kilobytes with the specified byte.
+Pads the input file to [padsize] Kilobytes with the specified byte.
 
 * `<outfile>` is currently not optional. This may change in a future release.
 * `<padsize>` is multiplied by 1024, so for 64KB, enter 64 here, not 65535.
@@ -88,7 +103,23 @@ Pads the input file to <padsize> Kilobytes with the specified byte.
 
 TODO
 ----
+
 * More error checking.
- * empty filenames, especially for output files.
+* empty filenames, especially for output files.
 * Alternate command syntax (--pad, --merge, --split)
 * Other functionality not available in original ROMWak?
+
+2022-11-23: MF
+Built 0.4 windows exe.
+
+Added example split batch files for;
+Atari ST: 2 (96k) and 6 (32k) chip TOS
+Atari TT: 4 (128k) chip TOS
+Atari STE: 2 (128k) chip TOS
+Atari ST micro ATX: 2 (256k) chip TOS (Contains two switchable TOS images, 256k each, zero padded)
+Atari PAK68/3: 4 (128k) chip TOS
+Atari PAK68/2: 4 (128k) chip TOS
+
+Added example combine batch files for;
+Atari TT: 4 (128k) chip TOS
+Atari STE: 2 (128k) chip TOS
